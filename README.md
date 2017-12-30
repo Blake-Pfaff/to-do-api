@@ -1,6 +1,6 @@
 # To Do API
 
-To Do API made with Rudy on Rails.
+To Do API made with Ruby on Rails.
 
 
 
