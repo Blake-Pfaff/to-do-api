@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20171230210231) do
   end
 
   create_table "lists", force: :cascade do |t|
-    t.boolean "private"
+    t.boolean "private", default: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
