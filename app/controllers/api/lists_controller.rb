@@ -15,7 +15,7 @@ class Api::ListsController < ApiController
     begin
       list = List.find(params[:id])
       list.destroy
-       render json: {}, status: :no_content
+       render json: {message: "List has been deleted."}, status: :no_content
      rescue ActiveRecord::RecordNotFound
        render :json => {}, :status => :not_found
      end
