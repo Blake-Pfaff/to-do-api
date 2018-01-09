@@ -1,3 +1,3 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id, :item
+  attributes :id, :item, :compeleted
 end
