@@ -1,4 +1,5 @@
 class Api::ItemsController < ApiController
+  #Ctrl for items
   before_action :authenticated?
   before_action :set_list
   before_action :set_list_item, only: [:show, :update, :destroy]
