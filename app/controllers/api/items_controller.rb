@@ -6,9 +6,18 @@ class Api::ItemsController < ApiController
 
   def create
 
-    item = @list.items.build(item_params)
+    item = Item.find(params[:item_id])
 
     if item.save
+      render json: item
+    else
+      render json: { errors: item.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    item = set_list_item
+    if item.update(item_params)
       render json: item
     else
       render json: { errors: item.errors.full_messages }, status: :unprocessable_entity
