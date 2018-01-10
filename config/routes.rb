@@ -5,11 +5,11 @@ Rails.application.routes.draw do
       resources :lists
     end
 
-    resources :lists, only: [:update] do
-      resources :items, only: [:create, :update, :destroy]
+    resources :lists, only: [:update, :index] do
+      resources :items, only: [:create, :update, :destroy, :index]
     end
 
-    resources :items, only: [:create, :destroy, :update]
+    resources :items, only: [:create, :destroy, :update, :index]
   end
 
 end

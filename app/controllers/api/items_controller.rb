@@ -4,10 +4,13 @@ class Api::ItemsController < ApiController
   before_action :set_list
   before_action :set_list_item, only: [:show, :update, :destroy]
 
+  def index
+    items = Item.all
+    render json: items, each_serializer: ItemSerializer
+  end
+
   def create
-
-    item = @list.items.build(item_params)
-
+  item = @list.items.build(item_params)
     if item.save
       render json: item
     else
