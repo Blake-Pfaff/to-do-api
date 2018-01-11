@@ -1,8 +1,8 @@
 class Api::ItemsController < ApiController
-  #Ctrl for items
+  # Ctrl for items
   before_action :authenticated?
   before_action :set_list
-  before_action :set_list_item, only: [:show, :update, :destroy]
+  before_action :set_list_item, only: %i[show update destroy]
 
   def index
     items = Item.all
@@ -10,7 +10,7 @@ class Api::ItemsController < ApiController
   end
 
   def create
-  item = @list.items.build(item_params)
+    item = @list.items.build(item_params)
     if item.save
       render json: item
     else
@@ -28,6 +28,7 @@ class Api::ItemsController < ApiController
   end
 
   private
+
   def item_params
     params.require(:item).permit(:item, :compeleted)
   end
@@ -39,5 +40,4 @@ class Api::ItemsController < ApiController
   def set_list_item
     @item = @list.items.find_by!(id: params[:id]) if @list
   end
-
 end

@@ -1,5 +1,5 @@
 class Api::ListsController < ApiController
-  #Ctrl for the lists
+  # Ctrl for the lists
   before_action :authenticated?
 
   def index
@@ -26,18 +26,16 @@ class Api::ListsController < ApiController
   end
 
   def destroy
-    begin
-      list = List.find(params[:id])
-      list.destroy
-       render json: {}, status: :no_content
-     rescue ActiveRecord::RecordNotFound
-       render :json => {}, :status => :not_found
-     end
+    list = List.find(params[:id])
+    list.destroy
+    render json: {}, status: :no_content
+   rescue ActiveRecord::RecordNotFound
+     render json: {}, status: :not_found
    end
 
   private
+
   def list_params
     params.require(:list).permit(:name, :private)
   end
-
 end

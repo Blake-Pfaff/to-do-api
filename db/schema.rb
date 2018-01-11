@@ -10,31 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109164151) do
-
-  create_table "items", force: :cascade do |t|
-    t.string "item"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "list_id"
-    t.boolean "compeleted"
-    t.index ["list_id"], name: "index_items_on_list_id"
+ActiveRecord::Schema.define(version: 20_180_109_164_151) do
+  create_table 'items', force: :cascade do |t|
+    t.string 'item'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'list_id'
+    t.boolean 'compeleted'
+    t.index ['list_id'], name: 'index_items_on_list_id'
   end
 
-  create_table "lists", force: :cascade do |t|
-    t.boolean "private", default: false
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.index ["user_id"], name: "index_lists_on_user_id"
+  create_table 'lists', force: :cascade do |t|
+    t.boolean 'private', default: false
+    t.integer 'user_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'name'
+    t.index ['user_id'], name: 'index_lists_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", limit: 50
-    t.string "password", limit: 30
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', limit: 50
+    t.string 'password', limit: 30
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end
