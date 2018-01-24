@@ -22,8 +22,6 @@ Once Ruby on Rails has been installed all you need is the command terminal to in
 
 ## Authors
 
-* **Blake Pfaff** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Blake Pfaff** - 
 
 
