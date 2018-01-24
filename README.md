@@ -22,6 +22,6 @@ Once Ruby on Rails has been installed all you need is the command terminal to in
 
 ## Authors
 
-* **Blake Pfaff** - 
+* **Blake Pfaff** 
 
 
